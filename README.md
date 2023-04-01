@@ -6,7 +6,7 @@ A storage engine similar to bitcask.
 ### Installing
 To start using minidb, install Go 1.19 or above. Minidb needs go modules. From your project, run the following command
 
-```sh
+```shell
 $ go get github.com/yanghao888/minidb
 ```
 This will retrieve the library.
@@ -60,10 +60,10 @@ The benchmarking code, and the detailed logs for the benchmarks can be found in 
 
 [benchmark]: https://github.com/yanghao888/minidb/tree/main/benchmark
 
-Execute the following command to run it：
-```sh
+Run it by executing the following command in the root directory：
+```shell
 $ make bench
 ```
 
 ## License
-Minidb is licensed under the term of the GPLv2 License.
+Minidb is licensed under the term of the [GPLv2 License](https://github.com/yanghao888/minidb/blob/main/LICENSE).

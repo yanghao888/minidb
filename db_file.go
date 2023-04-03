@@ -509,6 +509,9 @@ func (lf *logFile) iterate(fn replayFn) (uint32, error) {
 			return 0, err
 		}
 		if e.mark == Tombstone {
+			if err = fn(e.key, nil); err != nil {
+				return 0, err
+			}
 			offset += e.Size()
 			continue
 		}

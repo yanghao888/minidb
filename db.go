@@ -56,7 +56,11 @@ func Open(opt Options) (*DB, error) {
 
 	// Replay log file or hint file
 	err = db.dbFile.Replay(func(key []byte, lo *logOffset) error {
-		db.keyDir[string(key)] = lo
+		if lo == nil {
+			delete(db.keyDir, string(key))
+		} else {
+			db.keyDir[string(key)] = lo
+		}
 		return nil
 	})
 	if err != nil {

@@ -130,7 +130,7 @@ func (db *DB) Get(key []byte) ([]byte, error) {
 	return e.value, nil
 }
 
-// Delete deletes a key. This is done by adding a deleted marker for the key at write timestamp.
+// Delete deletes a key. This is done by adding a deleted marker for the key.
 func (db *DB) Delete(key []byte) (err error) {
 	if db.isClosed() {
 		return ErrDatabaseClosed
